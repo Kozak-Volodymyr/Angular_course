@@ -1,5 +1,30 @@
-<h1>Angular App</h1>
+<!-- <h1 [class.text-red]="bool">Angular App</h1>
 <app-navbar></app-navbar>
+<h1 [style.color]="bool? 'red' : 'brown'">Style Binding</h1>
 <p>{{message}}</p>
-<app-post [fromParent]="parentMessage" (messageEvent)="receiveMessage($event)"></app-post>
-<p>{{fromChild}}</p>
+<!-- <app-post [fromParent]="parentMessage" (messageEvent)="receiveMessage($event)"></app-post> -->
+<!-- <p>{{fromChild}}</p> -->
+<!-- <img [src]='imgUrl' height='400px' width='600px' alt="no no no " />
+<!-- event binding 
+<button (click)="changeColor()">Change color</button>
+<!-- event filtering 
+<input type="text" (keyup.enter)="onKeyup(username.value)" #username/>
+<input type="text" [(ngModel)]="userName" (keyup)="onKeyup2()">
+<!-- one way vs two way data binding 
+<input type="text" [value]='textValue' >
+<input type="text" [(ngModel)]="textValue" > -->
+<div class="main-form">
+ <h2>Post Form</h2>
+ 
+  <input type="text"  placeholder="post title"  [(ngModel)]="postTitle" (keyup)="changeTitle()">
+  <textarea placeholder="post details" [(ngModel)]='postDetails'>
+  </textarea>
+  <input type="text" placeholder="post image" [(ngModel)]='imageUrl' />
+  <input type="text" placeholder="post link" [(ngModel)]='linkUrl' />
+  <input type="checkbox" (click)="changeBackground()">Add Background
+
+<p [style.background]="changeColor? 'yellow':'white' ">{{postTitle}}</p>
+ <img [src]="imageUrl" />
+ <a [href]="linkUrl">{{linkUrl?"More link":''}}</a>
+</div>
+
