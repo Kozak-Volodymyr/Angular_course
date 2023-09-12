@@ -1,5 +1,24 @@
 import { Component,ViewChild,AfterViewInit } from '@angular/core';
 import { PostComponent } from './post/post.component';
+class Post{
+  id:number;
+  postTitle:string
+}
+interface User{
+  username?:string,
+  email?:string,
+  details?:string
+}
+class UserDetails implements User{
+  username?: string;
+  email?: string;
+  details?: string;
+  constructor(username,email,details){
+    this.username=username
+    this.details=details
+    this.email=email
+  }
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,34 +26,47 @@ import { PostComponent } from './post/post.component';
 })
 
 export class AppComponent {
- /*  message:string='Message From Typescript';
-  imgUrl:string='https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg'
-  bool:boolean=true;
-  textValue:string='text value';
+  username:string;
+  email:string;
+  details:string;
+/* objArray:Array<Post>=[
+   {id:1,postTitle:'Post 1'},
+  {id:2,postTitle:'Post 2'},
+  {id:3,postTitle:'Post 3'}, 
+] */
+objArray:Array<UserDetails>=[];
+stepForm:string='Nothing';
 
-  userName:string;
-  changeColor(){
-    this.bool=!this.bool;
-  }
-  onKeyup(username){
-    console.log(username)
-  }
-  onKeyup2(){
-    console.log(this.userName)
-  }
-
- */
-postTitle:string;
-postDetails:string;
-imageUrl:string;
-linkUrl:string;
-changeColor:boolean;
-changeTitle(){
-  console.log(this.postTitle);
-  
+constructor(){
+  /* for(let i=0;i<this.postArray.length;i++){
+    console.log(this.postArray[i]);
+  } */
 }
-changeBackground(){
-  this.changeColor=!this.changeColor
-  console.log(this.changeColor)
+
+/* addNew(){
+  this.objArray.push({id:6,postTitle:'Post 6'})
+}
+deleteNew(i){
+  this.objArray.splice(i,1);
+  console.log(this.objArray)
+} */
+/* onClick(str){
+  this.stepForm=str;
+}
+isActive:boolean=true;
+changeActive(){
+  this.isActive=!this.isActive
+} */
+changeData(){
+ this.objArray.push(new UserDetails(this.username,this.email,this.details));
+ console.log(this.objArray)
+ this.username='';
+ this.details='';
+ this.email='';
+}
+deleteItem(id){
+  this.objArray=this.objArray.filter((item,index)=>{
+    index!=id
+  })
 }
 }

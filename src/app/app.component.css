@@ -11,4 +11,15 @@
 .form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: '100px';
+    height: '100px';
+}
+.main{
+    color: red;
+
+}
+.text-weight{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
