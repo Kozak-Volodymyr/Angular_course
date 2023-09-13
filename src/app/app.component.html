@@ -1,17 +1,2 @@
-<h1 >{{title | lowercase}}</h1>
-<!-- number pipe -->
-<h1>{{count | number}}</h1>
-<h1>{{dcValue | number:'2.2-3'}}</h1>
-<h1>{{price | currency:'JPY':false:'2.1-2'}}</h1>
-<!-- date pipe -->
-<h1>{{today | date:'shortDate'}}</h1>
-<!-- Json Pipe -->
-<p>{{postObj | json}}</p>
-<!-- Precent Pipe -->
-<h3>{{5 | percent}}</h3>
-<!-- Slice Pipe -->
-<p>{{postArray | slice:0:3}}</p>
-<!-- Custom Pipe -->
-<h3>{{userDetails.city | appendCLI}}</h3>
-<!-- Custom Pipe with args -->
-<p>{{text | summary:10}}</p>
+<app-post></app-post>
+<app-post-list></app-post-list>

@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { AppendPipe } from './pipes/apppend.pipe';
 import { AppendCLIPipe } from './pipes/append-cli.pipe';
 import { SummaryPipe } from './pipes/summary.pipe';
+import { PostService } from './services/post.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,7 @@ import { SummaryPipe } from './pipes/summary.pipe';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule{
