@@ -26,47 +26,22 @@ class UserDetails implements User{
 })
 
 export class AppComponent {
-  username:string;
-  email:string;
-  details:string;
-/* objArray:Array<Post>=[
-   {id:1,postTitle:'Post 1'},
-  {id:2,postTitle:'Post 2'},
-  {id:3,postTitle:'Post 3'}, 
-] */
-objArray:Array<UserDetails>=[];
-stepForm:string='Nothing';
+title:string='Angular Course'
+count:number=285645;
+dcValue:number=3.8567
+price:number=13.234
+today:Date=new Date();
+postObj:object={
+  id:1,
+  postTitle:'Post1'
+}
+postArray:Array<string>=['post1','post2','post3'];
+userDetails={
+  name:'User 1',
+  city:'New York',
+  countryCode:'US'
+}
+text:string='asdfsgdhfgjklkjhfgdsadfghjkiSfdghtdjyuioypi[]poiuryetrewerwetyutiyoupiu'
+constructor(){}
 
-constructor(){
-  /* for(let i=0;i<this.postArray.length;i++){
-    console.log(this.postArray[i]);
-  } */
-}
-
-/* addNew(){
-  this.objArray.push({id:6,postTitle:'Post 6'})
-}
-deleteNew(i){
-  this.objArray.splice(i,1);
-  console.log(this.objArray)
-} */
-/* onClick(str){
-  this.stepForm=str;
-}
-isActive:boolean=true;
-changeActive(){
-  this.isActive=!this.isActive
-} */
-changeData(){
- this.objArray.push(new UserDetails(this.username,this.email,this.details));
- console.log(this.objArray)
- this.username='';
- this.details='';
- this.email='';
-}
-deleteItem(id){
-  this.objArray=this.objArray.filter((item,index)=>{
-    index!=id
-  })
-}
 }

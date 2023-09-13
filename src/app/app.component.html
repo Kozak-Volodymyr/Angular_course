@@ -1,62 +1,17 @@
-<!-- <p>{{postArray}}</p>
-<button (click)="addNew()">Button</button>
-<div *ngIf="objArray.length>0; then postList else noData"></div>
-
-<ng-template #postList>
-  <ul>
-  <li *ngFor="let post of objArray;let i=index">{{ i+' ' }}{{ post.postTitle }}
-    <button (click)="deleteNew(i)">Delete</button>
-  </li>
-</ul>
-
-</ng-template>
-<ng-template #noData>
-  <p>There is not data</p>
-</ng-template>
- -->
-<!-- <div>
-  <button (click)="onClick('step 1')">Step 1</button>
-  <button (click)="onClick('step 2')">Step 2</button>
-  <button (click)="onClick('step 3')">Step 3</button>
-</div>
-<br>
-<div [ngSwitch]="stepForm">
-<div *ngSwitchCase="'step 1'">Step 1 Form</div>
-<div *ngSwitchCase="'step 2'">Step 2 Form</div>
-<div *ngSwitchCase="'step 3'">Step 3 Form</div>
-<div *ngSwitchDefault>Nothing</div>
-</div>
-
-<p>NgStyle</p>
-<h1 [style.color]="isActive?'red':'black'"
-[style.textTransform]="isActive?'uppercase':'lowerCase'">Angular</h1>
-<button (click)='changeActive()'>Button</button>
-<h1 [ngStyle]="{
-  color:isActive?'red':'black',
-  textTransform:isActive?'uppercase':'lowerCase'
-
-}">NgStyleBinding</h1>
-<h1 [ngClass]="{'main':isActive,
-'text-weight':isActive}">NgClassBinding</h1> -->
-<div class="form">
-<p>User Details</p>
-<input type="text" [(ngModel)]="username" [value]="username" />
-<input type="text" [(ngModel)]="email" [value]="email" />
-<textarea width="100px" height="50px" [(ngModel)]="details" [value]='details'></textarea>
-<button (click)="changeData()">Save data</button>
-<table>
-  <tr>
-    <td>Name</td>
-    <td>Email</td>
-    <td>Address</td>
-    <td>Action</td>
-  </tr>
-  <tr *ngFor="let user of objArray;let i=index">
-    <td>{{i}}</td>
-    <td>{{user.username}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.details}}</td>
-    <td><button (click)="deleteItem(i)">Delete</button></td>
-  </tr>
-</table>
-</div>
+<h1 >{{title | lowercase}}</h1>
+<!-- number pipe -->
+<h1>{{count | number}}</h1>
+<h1>{{dcValue | number:'2.2-3'}}</h1>
+<h1>{{price | currency:'JPY':false:'2.1-2'}}</h1>
+<!-- date pipe -->
+<h1>{{today | date:'shortDate'}}</h1>
+<!-- Json Pipe -->
+<p>{{postObj | json}}</p>
+<!-- Precent Pipe -->
+<h3>{{5 | percent}}</h3>
+<!-- Slice Pipe -->
+<p>{{postArray | slice:0:3}}</p>
+<!-- Custom Pipe -->
+<h3>{{userDetails.city | appendCLI}}</h3>
+<!-- Custom Pipe with args -->
+<p>{{text | summary:10}}</p>
