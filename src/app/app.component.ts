@@ -1,5 +1,6 @@
 import { Component,ViewChild,AfterViewInit } from '@angular/core';
 import { PostComponent } from './post/post.component';
+import { FormControl, NgForm, NgModel } from '@angular/forms';
 class Post{
   id:number;
   postTitle:string
@@ -43,5 +44,11 @@ userDetails={
 }
 text:string='asdfsgdhfgjklkjhfgdsadfghjkiSfdghtdjyuioypi[]poiuryetrewerwetyutiyoupiu'
 constructor(){}
-
+onSubmit(f:NgForm){
+  console.log(f.value)
+}
+getValue(f:NgModel){
+  console.log(f);
+  
+}
 }
