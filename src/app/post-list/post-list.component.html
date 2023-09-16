@@ -1,3 +1,5 @@
-<ul>
-    <li *ngFor="let post of postList">{{post.postTitle}} </li>
-</ul>
+<div *ngFor="let post of posts;let i=index">
+<h1>{{post.title}}</h1>
+<button [routerLink]="['/post',i,post.title]">View content</button>
+<hr>
+</div>

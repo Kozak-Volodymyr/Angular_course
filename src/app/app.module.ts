@@ -1,33 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
-import { FormsModule } from '@angular/forms';
-import { AppendPipe } from './pipes/apppend.pipe';
-import { AppendCLIPipe } from './pipes/append-cli.pipe';
-import { SummaryPipe } from './pipes/summary.pipe';
-import { PostService } from './services/post.service';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { SinglePostComponent } from './single-post/single-post.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    PostComponent,
     PostListComponent,
-    AppendPipe,
-    AppendCLIPipe,
-    SummaryPipe
+    HomeComponent,
+    SinglePostComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    AppRoutingModule
   ],
-  providers: [PostService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule{

@@ -9,19 +9,5 @@ import { Post } from '../models/post';
 })
 export class PostComponent implements OnInit {
   ngOnInit(): void {
-    
   }
-  posts:Array<any>;
- constructor(private postService:PostService){
-
- /*  let postService=new PostService() */
-  this.posts=postService.postList; 
- }
- addNewData(){
-  let newPost:Post={
-    id:7,
-    postTitle:'Post 7'
-  };
-  this.postService.addPost(newPost);
- }
 }
